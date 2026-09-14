@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PichiTV — Stream Everything. Zero Limits.</title>
+  <meta name="description" content="PichiTV: 5,000+ live channels & 100k+ movies in 4K UHD. Free for Android & Android TV.">
+  <meta name="theme-color" content="#040711">
+
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+
+  <!-- Google Fonts: Outfit & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="viewport-locked">
+
+  <!-- Interactive Living Companion & Cosmic Particles -->
+  <canvas id="hero-canvas"></canvas>
+
+  <!-- Ambient Light Orbs -->
+  <div class="ambient-glow glow-left"></div>
+  <div class="ambient-glow glow-right"></div>
+
+  <!-- Single Screen Viewport Master Stage -->
+  <div class="master-screen-stage">
+
+    <!-- Sleek Floating Glass Header -->
+    <header class="stage-header">
+      <a href="#" class="brand-link" aria-label="PichiTV">
+        <img src="assets/logo.png" alt="PichiTV" class="brand-logo">
+      </a>
+
+      <div class="status-capsule">
+        <span class="live-beacon"></span>
+        <span class="status-v">v2.5.1 STABLE</span>
+        <span class="status-sep">/</span>
+        <span class="status-time" id="live-clock">--:--:--</span>
+      </div>
+
+      <a href="https://github.com/pichipieofficial/app-update/releases/latest/download/PichiTV.apk" class="header-apk-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="apk-icon">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>Get Latest APK</span>
+        <span class="apk-badge">GitHub</span>
+      </a>
+    </header>
+
+    <!-- Main Viewport Content -->
+    <main class="stage-main">
+      <div class="hero-split-layout">
+
+        <!-- LEFT HERO: COMPACT PUNCHY VALUE & ACTION -->
+        <div class="hero-left-hub">
+          
+          <div class="cyber-pill-tag">
+            <span class="pill-sparkle">✦</span>
+            <span class="pill-text">NEXT-GEN ENTERTAINMENT</span>
+            <span class="pill-free">100% FREE</span>
+          </div>
+
+          <h1 class="hero-headline">
+            <span class="headline-part-white">STREAM EVERYTHING.</span>
+            <span class="headline-part-flame">ZERO LIMITS.</span>
+          </h1>
+
+          <p class="hero-subline">
+            5,000+ live global channels &amp; 100k+ movies in 4K HDR. Built with dual zero-buffer playback engines for Android TV &amp; mobile.
+          </p>
+
+          <!-- High-Octane Download Card -->
+          <a href="https://github.com/pichipieofficial/app-update/releases/latest/download/PichiTV.apk" class="download-action-card" id="hero-download-btn">
+            <div class="action-card-glow"></div>
+            <div class="action-card-inner">
+              <div class="action-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="bounce-arrow">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </div>
+              <div class="action-text-box">
+                <span class="action-kicker">ALWAYS LATEST RELEASE &bull; ANDROID 5.0+</span>
+                <span class="action-title">Download PichiTV APK</span>
+              </div>
+              <span class="action-size-chip">GitHub</span>
+            </div>
+          </a>
+
+          <!-- 4 Floating Feature Pills -->
+          <div class="floating-metrics-grid">
+            <div class="metric-pill" data-tilt>
+              <div class="pill-glow ember-glow"></div>
+              <span class="pill-num">5,000<span class="plus">+</span></span>
+              <span class="pill-label">Live Channels</span>
+            </div>
+
+            <div class="metric-pill" data-tilt>
+              <div class="pill-glow cyan-glow"></div>
+              <span class="pill-num">100k<span class="plus">+</span></span>
+              <span class="pill-label">Movies &amp; VOD</span>
+            </div>
+
+            <div class="metric-pill" data-tilt>
+              <div class="pill-glow purple-glow"></div>
+              <span class="pill-num">4K<span class="unit">HDR</span></span>
+              <span class="pill-label">Zero-Buffer</span>
+            </div>
+
+            <div class="metric-pill" data-tilt>
+              <div class="pill-glow gold-glow"></div>
+              <span class="pill-num">$0<span class="unit">.00</span></span>
+              <span class="pill-label">No Subscriptions</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT HERO: 3D HOLOGRAPHIC AMBILIGHT TV & SATELLITES -->
+        <div class="hero-right-stage">
+          
+          <div class="perspective-rig" id="stage-rig">
+
+            <!-- Dynamic Reactive Ambilight Aura -->
+            <div class="ambilight-aura" id="ambilight-aura"></div>
+
+            <!-- Orbiting Floating Satellite 1 -->
+            <div class="satellite-card sat-top">
+              <span class="beacon-green"></span>
+              <div class="sat-text">
+                <span class="sat-title">EXOPLAYER 2.19</span>
+                <span class="sat-val">0.18s Ultra-Low Latency</span>
+              </div>
+            </div>
+
+            <!-- Orbiting Floating Satellite 2 -->
+            <div class="satellite-card sat-bottom">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sat-icon">
+                <rect x="2" y="7" width="20" height="15" rx="2"></rect>
+                <polyline points="17 2 12 7 7 2"></polyline>
+              </svg>
+              <div class="sat-text">
+                <span class="sat-title">10-FOOT UI</span>
+                <span class="sat-val">Native Android TV D-Pad</span>
+              </div>
+            </div>
+
+            <!-- The 3D TV Chassis -->
+            <div class="tv-unit" id="tv-chassis">
+              
+              <div class="tv-bezel-frame">
+                
+                <div class="tv-screen-chassis">
+                  <!-- Specular 3D Glare -->
+                  <div class="tv-glare-layer" id="tv-glare"></div>
+
+                  <!-- CRT Tuner Switch Flash -->
+                  <div class="tv-flash-layer" id="tv-flash"></div>
+
+                  <!-- Channel 1: Sports 4K -->
+                  <div class="stream-slide active" id="slide-sports" data-ambient="rgba(0, 229, 255, 0.55)">
+                    <img src="assets/screen-sports.jpg" alt="Live Sports Match" class="slide-art">
+                    <div class="slide-shade"></div>
+                    
+                    <div class="slide-hud">
+                      <div class="hud-top">
+                        <div class="hud-ch-tag">
+                          <span class="hud-dot"></span> LIVE &bull; CH 108 SKY SPORTS 4K
+                        </div>
+                        <div class="hud-chips">
+                          <span class="hud-chip cyan-chip">4K HDR</span>
+                          <span class="hud-chip">60 FPS</span>
+                        </div>
+                      </div>
+
+                      <div class="hud-bottom">
+                        <div class="score-card">
+                          <span>BLUE LIONS</span>
+                          <strong>2 — 1</strong>
+                          <span>RED DRAGONS</span>
+                          <span class="score-time" id="sports-timer">78:42</span>
+                        </div>
+                        <span class="stream-status">BUFFER: OPTIMAL (100%)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Channel 2: Cinema 4K -->
+                  <div class="stream-slide" id="slide-cinema" data-ambient="rgba(255, 106, 26, 0.55)">
+                    <img src="assets/screen-cinema.jpg" alt="Interstellar Odyssey" class="slide-art">
+                    <div class="slide-shade"></div>
+
+                    <div class="slide-hud">
+                      <div class="hud-top">
+                        <div class="hud-ch-tag cinema-tag">
+                          VOD PREMIERE &bull; INTERSTELLAR 4K
+                        </div>
+                        <div class="hud-chips">
+                          <span class="hud-chip ember-chip">IMAX</span>
+                          <span class="hud-chip">ATMOS</span>
+                        </div>
+                      </div>
+
+                      <div class="hud-bottom">
+                        <div class="cinema-progress-box">
+                          <div class="cinema-time-row">
+                            <span>Chapter 4: Event Horizon</span>
+                            <span id="cinema-timecode">01:42:18 / 02:45:00</span>
+                          </div>
+                          <div class="cinema-bar">
+                            <div class="cinema-fill" id="cinema-fill-bar" style="width: 62%;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Channel 3: Cyber Anime 120Hz -->
+                  <div class="stream-slide" id="slide-cyber" data-ambient="rgba(139, 92, 246, 0.55)">
+                    <img src="assets/screen-cyber.jpg" alt="Neo-Tokyo Cyber Live" class="slide-art">
+                    <div class="slide-shade"></div>
+
+                    <div class="slide-hud">
+                      <div class="hud-top">
+                        <div class="hud-ch-tag cyber-tag">
+                          BROADCAST &bull; NEO-TOKYO NIGHTS
+                        </div>
+                        <div class="hud-chips">
+                          <span class="hud-chip purple-chip">120 FPS</span>
+                          <span class="hud-chip">3D AUDIO</span>
+                        </div>
+                      </div>
+
+                      <div class="hud-bottom">
+                        <div class="cyber-ticker-wrap">
+                          <span class="cyber-ticker-badge">NOW STREAMING:</span>
+                          <div class="cyber-marquee-viewport">
+                            <span class="cyber-marquee-text">Midnight Cyber Beats &bull; Live DJ Set &bull; 88.4k Viewers &bull; Dual Engine Stream &bull; Chat Active &bull; Zero Lag</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- TV Chin with 100% Transparent Logo Symbol -->
+                <div class="tv-chin">
+                  <div class="tv-brand-lockup">
+                    <img src="assets/logo-symbol.png" alt="PichiTV" class="chin-logo-symbol">
+                    <span class="chin-brand-name">PichiTV</span>
+                  </div>
+                  <span class="tv-power-dot"></span>
+                </div>
+
+              </div>
+
+              <!-- TV Chrome Stand Base -->
+              <div class="tv-pedestal">
+                <div class="pedestal-neck"></div>
+                <div class="pedestal-foot"></div>
+              </div>
+
+            </div>
+
+            <!-- Floating Remote Controller Capsule -->
+            <div class="quick-remote-capsule">
+              <div class="remote-tabs">
+                <button class="ch-tab-btn active" data-ch="sports">
+                  <span class="tab-dot dot-cyan"></span>
+                  <span>⚽ Sports 4K</span>
+                </button>
+                <button class="ch-tab-btn" data-ch="cinema">
+                  <span class="tab-dot dot-ember"></span>
+                  <span>🚀 Cinema 4K</span>
+                </button>
+                <button class="ch-tab-btn" data-ch="cyber">
+                  <span class="tab-dot dot-purple"></span>
+                  <span>🌃 Cyber Live</span>
+                </button>
+              </div>
+
+              <div class="remote-actions">
+                <span class="remote-hint-badge" title="Use Arrow Left/Right or 1,2,3 keys on your keyboard">
+                  <kbd>◄</kbd><kbd>►</kbd> Remote
+                </span>
+                <button class="mini-tool-btn" id="btn-ambient-audio" title="Toggle Ambience Soundscape">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                  </svg>
+                </button>
+                <button class="mini-tool-btn" id="btn-fs-toggle" title="Fullscreen Simulator">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Sleek Minimal Viewport Footer Rail -->
+    <footer class="stage-footer">
+      <div class="footer-left">
+        &copy; 2026 <strong>PichiPie</strong> &bull; PichiTV Project
+      </div>
+      <div class="footer-center">
+        <span class="butterfly-indicator">🦋 Click anywhere to send sparkling stardust to the companion</span>
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com/pichipieofficial/app-update/releases/latest/download/PichiTV.apk" class="direct-apk-link" id="footer-apk-link">
+          Official GitHub Release (APK) &rarr;
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Download Feedback Toast -->
+  <div class="download-toast" id="download-toast">
+    <div class="toast-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <div class="toast-body">
+      <strong>Latest PichiTV APK Downloading</strong>
+      <span>Direct from official GitHub Releases &bull; Always up-to-date</span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
